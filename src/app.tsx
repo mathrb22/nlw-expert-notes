@@ -17,37 +17,40 @@ export function App() {
 				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[250px] gap-6'>
 					<NewNoteCard />
 					<NoteCard
-						date={new Date()}
-						content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
-				perspiciatis facere harum minus, blanditiis ipsum rerum repellendus adipisci
-				eaque nesciunt saepe hic aliquid odit laborum? Incidunt provident similique
-				ut nam!'
+						note={{
+							date: new Date(),
+							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
+						}}
 					/>
 					<NoteCard
-						date={new Date()}
-						content='Lorem ipsum dolor, sit amet consectetur'
+						note={{
+							date: new Date(),
+							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
+						}}
 					/>
 					<NoteCard
-						date={new Date()}
-						content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
-				perspiciatis facere harum minus, blanditiis ipsum rerum repellendus adipisci
-				eaque nesciunt saepe hic aliquid odit laborum? Incidunt provident similique
-				ut nam!'
+						note={{
+							date: new Date(),
+							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
+						}}
 					/>
 					<NoteCard
-						date={new Date()}
-						content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
-				perspiciatis'
+						note={{
+							date: new Date(),
+							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
+						}}
 					/>
 					<NoteCard
-						date={new Date()}
-						content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
-				perspiciatis facere harum minus, blanditiis ipsum'
+						note={{
+							date: new Date(),
+							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
+						}}
 					/>
 					<NoteCard
-						date={new Date()}
-						content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
-				perspiciatis facere harum minus'
+						note={{
+							date: new Date(),
+							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
+						}}
 					/>
 				</div>
 			</div>
