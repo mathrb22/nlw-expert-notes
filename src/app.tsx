@@ -16,12 +16,39 @@ export function App() {
 
 				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[250px] gap-6'>
 					<NewNoteCard />
-					<NoteCard />
-					<NoteCard />
-					<NoteCard />
-					<NoteCard />
-					<NoteCard />
-					<NoteCard />
+					<NoteCard
+						date={new Date()}
+						content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+				perspiciatis facere harum minus, blanditiis ipsum rerum repellendus adipisci
+				eaque nesciunt saepe hic aliquid odit laborum? Incidunt provident similique
+				ut nam!'
+					/>
+					<NoteCard
+						date={new Date()}
+						content='Lorem ipsum dolor, sit amet consectetur'
+					/>
+					<NoteCard
+						date={new Date()}
+						content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+				perspiciatis facere harum minus, blanditiis ipsum rerum repellendus adipisci
+				eaque nesciunt saepe hic aliquid odit laborum? Incidunt provident similique
+				ut nam!'
+					/>
+					<NoteCard
+						date={new Date()}
+						content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+				perspiciatis'
+					/>
+					<NoteCard
+						date={new Date()}
+						content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+				perspiciatis facere harum minus, blanditiis ipsum'
+					/>
+					<NoteCard
+						date={new Date()}
+						content='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+				perspiciatis facere harum minus'
+					/>
 				</div>
 			</div>
 		</>
