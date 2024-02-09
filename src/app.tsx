@@ -3,8 +3,51 @@ import logoNlwExpert from './assets/logo-nlw-expert2.svg';
 import { NewNoteCard } from './components/new-note-card';
 import { NoteCard } from './components/note-card';
 import { SearchBar } from './components/search-bar';
+import { ChangeEvent, useState } from 'react';
+
+interface Note {
+	id: string;
+	date: Date;
+	content: string;
+}
 
 export function App() {
+	const [search, setSearch] = useState('');
+	const [notes, setNotes] = useState<Note[]>(() => {
+		const notes = localStorage.getItem('notes');
+
+		if (notes) {
+			return JSON.parse(notes);
+		}
+
+		return [];
+	});
+
+	function handleSearch(event: ChangeEvent<HTMLInputElement>) {
+		const query = event.target.value;
+		setSearch(query);
+	}
+
+	const filteredNotes =
+		search !== ''
+			? notes.filter((note) =>
+					note.content.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+			  )
+			: notes;
+
+	function onNoteCreated(content: string) {
+		const newNote: Note = {
+			id: crypto.randomUUID(),
+			date: new Date(),
+			content,
+		};
+
+		const notesArray = [newNote, ...notes];
+
+		setNotes(notesArray);
+		localStorage.setItem('notes', JSON.stringify(notesArray));
+	}
+
 	return (
 		<>
 			<div className='mx-auto max-w-6xl my-12 px-4 space-y-6'>
@@ -22,48 +65,16 @@ export function App() {
 				</div>
 
 				<form className='w-full'>
-					<SearchBar />
+					<SearchBar handleSearch={handleSearch} />
 				</form>
 				<div className='h-px bg-slate-800' />
 
 				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[250px] gap-6'>
-					<NewNoteCard />
-					<NoteCard
-						note={{
-							date: new Date(),
-							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
-						}}
-					/>
-					<NoteCard
-						note={{
-							date: new Date(),
-							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
-						}}
-					/>
-					<NoteCard
-						note={{
-							date: new Date(),
-							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
-						}}
-					/>
-					<NoteCard
-						note={{
-							date: new Date(),
-							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
-						}}
-					/>
-					<NoteCard
-						note={{
-							date: new Date(),
-							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
-						}}
-					/>
-					<NoteCard
-						note={{
-							date: new Date(),
-							content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.!',
-						}}
-					/>
+					<NewNoteCard onNoteCreated={onNoteCreated} />
+
+					{filteredNotes.map((note) => (
+						<NoteCard key={note.id} note={note} />
+					))}
 				</div>
 			</div>
 		</>
