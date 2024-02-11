@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="NLW Expert Notes" src=".github/assets/icon.png" height="64px"/>
+  <img alt="NLW Expert Notes" src=".github/assets/icon.png" height="74px"/>
   <h1>NLW Expert Notes</h1>
 </div>
 <div align="center">
@@ -54,6 +54,8 @@ Com um design responsivo e uma interface intuitiva, o usuário poderá criar, fi
 - [x] Remoção de anotações
 
 ## 💻 Demonstração
+
+https://github.com/mathrb22/nlw-expert-notes/assets/62413443/aa2043f9-019f-4027-bb01-bb5299ed64fd
 
 A aplicação está disponível para visualização em [**mathrb22-nlw-expert-notes.vercel.app**](https://mathrb22-nlw-expert-notes.vercel.app/).
 
