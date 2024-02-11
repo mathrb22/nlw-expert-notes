@@ -27,8 +27,8 @@ export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
 			</Dialog.Trigger>
 
 			<Dialog.Portal>
-				<Dialog.Overlay className='inset-0 fixed bg-black/50 data-[state=open]:animate-[dialog-overlay-show_300ms] data-[state=closed]:animate-[dialog-overlay-hide_300ms' />
-				<Dialog.Content className='fixed overflow-hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[640px] w-full h-[60vh] bg-slate-700 rounded-md flex flex-col outline-none data-[state=open]:animate-[dialog-content-show_300ms] data-[state=closed]:animate-[dialog-content-hide_300ms]'>
+				<Dialog.Overlay className='inset-0 fixed bg-black/50 md:data-[state=open]:animate-[dialog-overlay-show_300ms] md:data-[state=closed]:animate-[dialog-overlay-hide_300ms' />
+				<Dialog.Content className='fixed inset-0 md:inset-auto overflow-hidden md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] w-full md:h-[60vh] bg-slate-700 md:rounded-md flex flex-col outline-none md:data-[state=open]:animate-[dialog-content-show_300ms] md:data-[state=closed]:animate-[dialog-content-hide_300ms]'>
 					<Dialog.Close className='absolute top-4 right-4 text-slate-400 hover:text-slate-100 focus-visible:ring-2 focus-visible:ring-lime-600 transition-all outline-none'>
 						<X size={20} />
 					</Dialog.Close>
