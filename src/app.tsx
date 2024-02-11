@@ -4,6 +4,7 @@ import { NewNoteCard } from './components/new-note-card';
 import { NoteCard } from './components/note-card';
 import { SearchBar } from './components/search-bar';
 import { ChangeEvent, useState } from 'react';
+import { toast } from 'sonner';
 
 interface Note {
 	id: string;
@@ -48,6 +49,21 @@ export function App() {
 		localStorage.setItem('notes', JSON.stringify(notesArray));
 	}
 
+	function onNoteDeleted(id: string) {
+		const notesArray = notes.filter((note) => {
+			return note.id !== id;
+		});
+
+		setNotes(notesArray);
+
+		localStorage.setItem('notes', JSON.stringify(notesArray));
+
+		toast.success('Nota apagada com sucesso!', {
+			position: 'top-center',
+			duration: 2500,
+		});
+	}
+
 	return (
 		<>
 			<div className='mx-auto max-w-6xl my-12 px-4 space-y-6'>
@@ -73,7 +89,7 @@ export function App() {
 					<NewNoteCard onNoteCreated={onNoteCreated} />
 
 					{filteredNotes.map((note) => (
-						<NoteCard key={note.id} note={note} />
+						<NoteCard onNoteDeleted={onNoteDeleted} key={note.id} note={note} />
 					))}
 				</div>
 			</div>
